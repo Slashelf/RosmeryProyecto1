@@ -1,0 +1,18 @@
+{
+    "opiniones": [
+        {
+            "nombre": "Juan Pérez",
+            "comentario": "Excelente servicio.",
+            "categoria": "Atención al cliente",
+            "evaluacion": "5"
+        },
+        {
+            "nombre": "Ana López",
+            "comentario": "Podrían mejorar.",
+            "categoria": "Calidad del producto",
+            "evaluacion": "3"
+        }
+    ],
+    "categorias": ["Banca en línea", "Atención al cliente", "Comisiones", "Seguridad", "Productos y servicios"],
+    "evaluacion": ["Excelente", "Bueno", "Regular", "Malo"]
+}

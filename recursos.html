@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú y Carrusel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para las burbujas */
+        .card {
+            border-radius: 50px;  /* Redondear las esquinas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra para dar el efecto de burbuja */
+            overflow: hidden;  /* Asegurarse de que las imágenes no sobresalgan */
+        }
+
+        /* Asegurarse de que las cards estén centradas y un poco más abajo que el navbar */
+        #cards-container {
+            margin-top: 80px;  /* Espacio desde la barra de navegación */
+        }
+
+        .card-body {
+            text-align: center;  /* Centrar el contenido dentro de las cards */
+        }
+
+        .btn-primary {
+            border-radius: 30px;  /* Botón redondeado para seguir el estilo burbuja */
+        }
+
+        .card-img-top {
+            border-radius: 50%;  /* Redondear la imagen */
+            width: 150px;  /* Tamaño de la imagen */
+            height: 150px;  /* Tamaño de la imagen */
+            object-fit: cover;  /* Asegurarse de que la imagen se ajuste correctamente */
+            margin: 0 auto;  /* Centrar la imagen */
+            display: block;  /* Asegurarse de que la imagen se comporte como un bloque */
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Barra de navegación -->
+    <nav id="navbar">
+        <div class="top-bar">
+            <div class="logo-container">
+                <img src="img/pngwing.com (2).png" alt="Logo" class="logo">
+            </div>
+            <div class="language-container">
+                <button id="change-language" class="language-btn">ES</button>
+            </div>
+        </div>
+
+        <button id="menu-toggle" class="menu-btn">☰ Menu</button>
+        <ul id="menu" class="menu-list">
+            <!-- El menú se llenará dinámicamente con JavaScript -->
+        </ul>
+        <!-- Título del menú que se cargará del XML -->
+        <h1 id="menu-title"></h1>
+    </nav>
+
+    <!-- Contenedor para el contenido principal de las cards -->
+    <main class="container mt-4">
+        <div id="cards-container" class="row d-flex justify-content-center">
+            <!-- Las cards se llenarán dinámicamente con JavaScript -->
+        </div>
+    </main>
+
+    <script>
+        // Función para cargar el archivo XML y actualizar el título del menú
+        function cargarXML() {
+            fetch('menu.xml')  // Carga el archivo XML correcto
+                .then(response => response.text())
+                .then(str => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(str, "application/xml");
+                    const title = xmlDoc.getElementsByTagName("title")[0].textContent;
+                    document.getElementById('menu-title').textContent = title; // Establecer el título del menú
+                })
+                .catch(error => console.error('Error cargando el archivo XML:', error));
+        }
+
+        // Función para cargar el archivo JSON y mostrar las cards
+        function cargarJSON() {
+            fetch('menuData.json')  // Cargar el archivo JSON correcto
+                .then(response => response.json())
+                .then(data => {
+                    // Cards
+                    const cardsContainer = document.getElementById('cards-container');
+                    data.menuItems.forEach(item => {
+                        const card = document.createElement('div');
+                        card.classList.add('col-md-3', 'mb-4');
+                        card.innerHTML = `
+                            <div class="card">
+                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagen de ejemplo">
+                                <div class="card-body">
+                                    <h5 class="card-title">${item.name || 'Título no disponible'}</h5>
+                                    <p class="card-text">${item.description || 'Descripción no disponible'}</p>
+                                    <a href="${item.link || '#'}" class="btn btn-primary">Ver más</a>
+                                </div>
+                            </div>
+                        `;
+                        cardsContainer.appendChild(card);
+                    });
+                })
+                .catch(error => console.error('Error cargando el archivo JSON:', error));
+        }
+
+        // Llamar a las funciones para cargar los contenidos cuando la página esté cargada
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarXML();  // Cargar el XML
+            cargarJSON(); // Cargar el JSON
+        });
+    </script>
+
+    <!-- Scripts adicionales (no se eliminan) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

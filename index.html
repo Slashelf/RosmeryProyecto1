@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú y Carrusel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navbar -->
+<!-- Barra superior (Logo y Cambio de Idioma) -->
+
+  
+  <!-- Barra de navegación -->
+  <nav id="navbar">
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="img/pngwing.com (2).png" alt="Logo" class="logo">
+      </div>
+      <div class="language-container">
+        <button id="change-language" class="language-btn">ES</button>
+      </div>
+    </div>
+  
+    <button id="menu-toggle" class="menu-btn">☰ Menu</button>
+    <ul id="menu" class="menu-list">
+      <!-- El menú se llenará dinámicamente con JavaScript -->
+    </ul>
+  </nav>
+  
+  <!-- Barra de separación (debajo de la barra de navegación) -->
+  <div class="bottom-bar"></div>
+  
+  <!-- Carrusel -->
+  <div class="carousel-container mt-4">
+    <div class="carousel">
+      <img src="img/img1.jpg" class="carousel-img active" alt="Imagen 1">
+      <img src="img/img2.jpg" class="carousel-img" alt="Imagen 2">
+      <img src="img/img3.jpg" class="carousel-img" alt="Imagen 3">
+    </div>
+    <div class="carousel-controls">
+      <button id="prev" class="btn btn-dark">&lt;</button>
+      <button id="next" class="btn btn-dark">&gt;</button>
+    </div>
+  </div>
+  <div class="container" id="form">
+    <h1 class="text-center mb-4">Formulario de Opiniones</h1>
+    <form id="formulario" class="mb-4">
+      <!-- El resto del formulario se mantiene igual -->
+    </form>
+  </div>
+  
+  
+    
+    
+
+<!-- Main content -->
+<main class="container my-5">
+    <!-- Introducción -->
+    <section id="intro" class="section-content mb-5">
+        <h2 class="text-2xl font-bold mb-4">Introducción al Proyecto</h2>
+        <p>Este proyecto tiene como objetivo mejorar la calidad de los servicios bancarios a través de la recopilación de opiniones de los usuarios. Queremos hacer el proceso más transparente y eficiente, ofreciéndote una plataforma para compartir tu experiencia.</p>
+        <button class="btn btn-primary mt-3">Saber más</button>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="benefits" class="section-content mb-5">
+        <h2 class="text-2xl font-bold mb-4">Beneficios de Participar</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="img/at1.jpg" class="card-img-top" alt="Beneficio 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Contribuir a la mejora de los servicios bancarios</h5>
+                        <p class="card-text">Tu opinión es valiosa y puede ayudar a cambiar la manera en que los bancos operan, mejorando la experiencia de todos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="img/at2.jpg" class="card-img-top" alt="Beneficio 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Recompensas por tu participación</h5>
+                        <p class="card-text">Obtén descuentos exclusivos, promociones y recompensas por cada contribución que realices en la plataforma.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="img/at3.jpg" class="card-img-top" alt="Beneficio 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Accede a encuestas personalizadas</h5>
+                        <p class="card-text">Recibe encuestas adaptadas a tus necesidades y área de interés dentro del ámbito bancario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Política de privacidad -->
+    <section id="pol" class="section-content mb-5">
+        <h2 class="text-2xl font-bold mb-4">Política de Privacidad</h2>
+        <p>Nos comprometemos a proteger la privacidad de tus datos personales y garantizar que se utilicen únicamente para mejorar los servicios que ofrecemos.</p>
+       
+
+        <!-- Modal de Política de Privacidad -->
+        <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="privacyModalLabel">Detalles de la Política de Privacidad</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Tu información personal será tratada con total confidencialidad y solo se usará para mejorar nuestros servicios. No compartimos tus datos con terceros sin tu consentimiento explícito.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes -->
+    <section id="preg" class="section-content mb-5">
+        <h2 class="text-2xl font-bold mb-4">Preguntas Frecuentes</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="card">
+                <div class="card-header" id="faq1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFaq1" aria-expanded="true" aria-controls="collapseFaq1">
+                            ¿Cómo puedo participar?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFaq1" class="collapse show" aria-labelledby="faq1" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Solo debes registrarte en la plataforma y comenzar a responder encuestas o dar tu opinión sobre los servicios bancarios.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="faq2">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFaq2" aria-expanded="false" aria-controls="collapseFaq2">
+                            ¿Qué tipo de recompensas puedo obtener?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFaq2" class="collapse" aria-labelledby="faq2" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Puedes recibir descuentos, promociones exclusivas, y otros premios por tu participación en la plataforma.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="menu.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.carousel img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === index);
+                });
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                showImage(currentIndex);
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Menú: Solo un submenú abierto a la vez
+        const menuItems = document.querySelectorAll(".menu-item");
+
+        menuItems.forEach(item => {
+            item.addEventListener("click", function() {
+            // Cerrar todos los submenús
+            menuItems.forEach(innerItem => {
+                if (innerItem !== item) {
+                innerItem.classList.remove("open");
+                }
+            });
+
+            // Toggle del submenú del ítem actual
+            item.classList.toggle("open");
+            });
+        });
+        });
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.carousel img');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        // Cambiar imagen automáticamente cada 2 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        }, 8000); // 2000 milisegundos = 2 segundos
+    });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+    "preguntas": [
+      {
+        "texto": "¿Cómo calificarías la calidad de nuestro servicio?",
+        "opciones": [
+          {"value": "1", "texto": "Muy malo"},
+          {"value": "2", "texto": "Malo"},
+          {"value": "3", "texto": "Regular"},
+          {"value": "4", "texto": "Bueno"},
+          {"value": "5", "texto": "Excelente"}
+        ]
+      },
+      {
+        "texto": "¿Recomendarías nuestros servicios?",
+        "opciones": [
+          {"value": "yes", "texto": "Sí"},
+          {"value": "no", "texto": "No"}
+        ]
+      }
+    ]
+  }
+  

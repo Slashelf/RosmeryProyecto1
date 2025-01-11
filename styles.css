@@ -1,0 +1,365 @@
+/* Barra de navegación (incluye el logo y cambio de idioma) */
+#navbar {
+    background-color: #34495e;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0px;
+    background-color: white; /* Espacio entre el logo y el menú */
+  }
+  
+  .logo-container img {
+    height: 80px; /* Ajusta el tamaño del logo */
+    padding: 10px;
+    padding-left: 50px;
+  }
+  
+  .language-container {
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 50px;
+  }
+  
+  .language-btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .language-btn:hover {
+    background-color: #16a085;
+  }
+  
+  .menu-btn {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Ocultamos el botón en dispositivos grandes */
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-btn:hover {
+    background-color: #1abc9c;
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .menu-item {
+    position: relative;
+    margin-right: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    background-color: #1abc9c;
+    border-radius: 5px;
+  }
+  
+  .menu-item > a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  /* Submenú: se despliega al pasar el ratón */
+  .menu-item:hover > .submenu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2c3e50;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    width: 200px;
+    list-style: none;
+  }
+  
+  .submenu a {
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submenu a:hover {
+    background-color: #1abc9c;
+  }
+  
+  .submenu a:active {
+    background-color: #16a085;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Carrusel */
+  .carousel-container {
+    margin-top: 80px; /* Deja más espacio para la barra de navegación */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra el carrusel */
+    position: relative; /* Necesario para las flechas posicionadas absolutamente */
+    padding: 0 20px; /* Añadimos espacio lateral */
+  }
+  
+  .carousel {
+    width: 100%;
+    max-width: 1200px; /* Limita el tamaño máximo del carrusel */
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Flechas de navegación */
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: none; /* Inicialmente ocultas */
+    justify-content: space-between;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .carousel-container:hover .carousel-controls {
+    display: flex; /* Aparecen al pasar el ratón sobre el carrusel */
+  }
+  
+  .carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Imagen del carrusel */
+  .carousel img {
+    width: 100%; /* Las imágenes ocupan todo el ancho del carrusel */
+    height: 100%; /* Las imágenes ocupan todo el alto del carrusel */
+    object-fit: cover;
+    display: none; /* Ocultamos todas las imágenes por defecto */
+  }
+  
+  .carousel img.active {
+    display: block; /* Solo mostramos la imagen activa */
+  }
+  
+  /* Barra de separación (debajo de la barra de navegación) */
+  .bottom-bar {
+    background-color: #ecf0f1;
+    height: 5px; /* Ajusta la altura según lo que desees */
+    margin-top: 20px; /* Separa un poco más la barra superior */
+  }
+  
+  /* Diseño Responsivo */
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: block; /* Mostramos el botón en pantallas pequeñas */
+    }
+  
+    .menu-list {
+      display: none; /* Ocultamos el menú por defecto */
+      position: absolute;
+      background-color: #34495e;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      padding: 0;
+      flex-direction: column;
+    }
+  
+    .menu-list.open {
+      display: flex; /* Mostramos el menú cuando está abierto */
+    }
+  
+    .menu-item {
+      margin-right: 0;
+      padding: 15px;
+    }
+  
+    .carousel-container {
+      margin-top: 120px; /* Aseguramos suficiente espacio para el menú en pantallas pequeñas */
+    }
+  
+    .carousel img {
+      height: auto; /* Devolvemos la altura automática en pantallas pequeñas */
+    }
+  }
+  
+  /* Mejoras en las tarjetas de contenido */
+.section-content {
+    background-color: #fff; /* Fondo blanco para las secciones */
+    border-radius: 15px; /* Bordes redondeados para suavizar la apariencia */
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    transition: all 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.section-content:hover {
+    transform: translateY(-5px); /* Sube ligeramente la tarjeta al pasar el ratón */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Sombra más prominente */
+}
+
+/* Mejora de los títulos de las secciones */
+h2 {
+    font-size: 24px;
+    color: #34495e; /* Color gris oscuro para los títulos */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Mejora de los botones dentro de las secciones */
+button {
+    padding: 10px 20px;
+    background-color: #1abc9c; /* Botón con fondo verde claro */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Bordes más redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #16a085; /* Cambio de color al pasar el ratón */
+}
+
+/* Diseño de las tarjetas (beneficios) */
+.card {
+    border-radius: 10px; /* Bordes redondeados para las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de subida al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
+}
+
+/* Imagen de las tarjetas */
+.card-img-top {
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    object-fit: cover;
+    width: 100%;
+    height: 200px; /* Ajuste de altura para las imágenes */
+}
+
+/* Cuerpo de las tarjetas */
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #34495e; /* Color de texto en gris oscuro */
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #7f8c8d; /* Color gris claro para los textos */
+    font-size: 16px;
+}
+
+/* Modal de Política de Privacidad */
+.modal-content {
+    border-radius: 10px; /* Bordes redondeados en el modal */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+}
+
+.modal-header {
+    background-color: #1abc9c; /* Fondo verde para el encabezado */
+    color: white;
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.modal-body {
+    font-size: 16px;
+    color: #34495e;
+}
+
+.modal-footer {
+    border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+}
+
+/* Mejora de las preguntas frecuentes */
+.accordion .card {
+    border: none; /* Eliminamos el borde de las tarjetas */
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Transición suave al expandir */
+}
+
+.accordion .card-header {
+    background-color: #ecf0f1;
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+}
+
+.accordion .card-header:hover {
+    background-color: #bdc3c7; /* Color gris al pasar el ratón */
+}
+
+.accordion .collapse {
+    border-radius: 0 0 10px 10px; /* Bordes redondeados al colapsar */
+    background-color: #f4f6f7; /* Fondo ligeramente gris */
+}
+
+.accordion .collapse.show {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave cuando está abierto */
+}
+
+
+
+ 

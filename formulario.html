@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú y Carrusel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navbar -->
+<!-- Barra superior (Logo y Cambio de Idioma) -->
+
+  
+  <!-- Barra de navegación -->
+  <nav id="navbar">
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="img/pngwing.com (2).png" alt="Logo" class="logo">
+      </div>
+      <div class="language-container">
+        <button id="change-language" class="language-btn">ES</button>
+      </div>
+    </div>
+  
+    <button id="menu-toggle" class="menu-btn">☰ Menu</button>
+    <ul id="menu" class="menu-list">
+      <!-- El menú se llenará dinámicamente con JavaScript -->
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1 class="text-center mb-4">Formulario de Opiniones</h1>
+
+   <!-- Formulario de Opiniones -->
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white text-center">
+      <h2>Formulario de Opiniones</h2>
+    </div>
+    <div class="card-body">
+      <form id="formulario">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="comentario">Comentario</label>
+          <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe tu opinión aquí" required></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="categoria">Categoría</label>
+          <select class="form-control" id="categoria" required>
+            <!-- Las categorías se cargarán dinámicamente -->
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="evaluacion">Evaluación</label>
+          <select class="form-control" id="evaluacion" required>
+            <!-- Las opciones de evaluación se cargarán dinámicamente -->
+          </select>
+        </div>
+  
+        <button type="submit" class="btn btn-success w-100">Agregar Opinión</button>
+      </form>
+    </div>
+  </div>
+  
+
+    <hr>
+
+
+    <h2 class="text-center">Datos de Encuesta</h2>
+    <table class="table table-striped" id="tabla-registros">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Comentario</th>
+          <th>Categoría</th>
+          <th>Evaluación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los registros se mostrarán aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="formulario.js"></script>
+
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="menu.js"></script>
+</body>

@@ -1,0 +1,20 @@
+{
+    "menuItems": [
+      {
+        "name": "Consejos de ahorro",
+        "description": "Consejos prácticos para ahorrar dinero.",
+        "link": "https://www.ejemplo.com/ahorro"
+      },
+      {
+        "name": "Guías para inversiones",
+        "description": "Guías completas sobre cómo invertir.",
+        "link": "https://www.ejemplo.com/inversiones"
+      },
+      {
+        "name": "Calculadoras financieras",
+        "description": "Herramientas para calcular tus finanzas.",
+        "link": "https://www.ejemplo.com/calculadoras"
+      }
+    ]
+  }
+  
