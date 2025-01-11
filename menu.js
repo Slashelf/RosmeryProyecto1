@@ -27,25 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
           <subitem name="Videos explicativos" link="#videos" />
         </item>
         <item name="Comunidad">
-          <subitem name="Discusión sobre servicios" link="#discussion" />
+          <subitem name="Discusión sobre servicios" link="comunidad.html" />
           <subitem name="Comparación de bancos" link="#comparison" />
           <subitem name="Historias de usuarios" link="#stories" />
           <subitem name="Redes sociales" link="#social" />
         </item>
         <item name="Extras">
-          <subitem name="Simulador de préstamos" link="#loan-simulator" />
+          <subitem name="Simulador de préstamos" link="extras.html" />
           <subitem name="Comparador de tarjetas" link="#card-comparator" />
           <subitem name="Tutoriales interactivos" link="#tutorials" />
           <subitem name="Ofertas exclusivas" link="#offers" />
         </item>
         <item name="FAQ">
-          <subitem name="Cómo se usan los datos" link="#data-usage" />
+          <subitem name="Cómo se usan los datos" link="FAQ.html" />
           <subitem name="Modificación de respuestas" link="#response-modification" />
           <subitem name="Políticas del proyecto" link="#project-policies" />
           <subitem name="Soporte técnico" link="#support" />
         </item>
         <item name="Contacto">
-          <subitem name="Formulario de consultas" link="#queries" />
+          <subitem name="Formulario de consultas" link="contacto.html" />
           <subitem name="Redes sociales" link="#social" />
           <subitem name="Feedback" link="#feedback" />
           <subitem name="Chat en línea" link="#chat" />

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú y Carrusel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* Estilos para el contenido */
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+    
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .card h3 {
+            color: #007BFF;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+    
+        .comment-bubble {
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px 0;
+            max-width: 80%;
+        }
+    
+        .comment-bubble p {
+            margin: 0;
+        }
+    
+        .comment-meta {
+            font-size: 0.9em;
+            color: #555;
+        }
+    
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-icons img {
+            width: 40px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+    
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .comparison-table th {
+            background-color: #f7f7f7;
+        }
+    
+        /* Mejoras adicionales */
+        .card-body p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        /* Estilos para los iconos de redes sociales */
+        .social-icon {
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        .social-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .social-img:hover {
+            transform: scale(1.1);
+        }
+
+        .social-text {
+            display: block;
+            margin-top: 5px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+  <!-- Barra de navegación -->
+  <nav id="navbar">
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="img/pngwing.com (2).png" alt="Logo" class="logo">
+      </div>
+      <div class="language-container">
+        <button id="change-language" class="language-btn">ES</button>
+      </div>
+    </div>
+  
+    <button id="menu-toggle" class="menu-btn">☰ Menu</button>
+    <ul id="menu" class="menu-list">
+      <!-- El menú se llenará dinámicamente con JavaScript -->
+    </ul>
+  </nav>
+
+  <div class="container text-center" style="background-color: #ffffff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <!-- Discusión sobre servicios -->
+    <div id="discussion" class="card mb-4" style="padding-top: 80px;">
+        <h3>Discusión sobre servicios</h3>
+        <div id="discussion-content"></div>
+    </div>
+
+    <!-- Comparación de bancos -->
+    <div id="comparison" class="card mb-4">
+        <h3>Comparación de bancos</h3>
+        <div id="comparison-content"></div>
+    </div>
+
+    <!-- Historias de usuarios -->
+    <div id="stories" class="card mb-4">
+        <h3>Historias de usuarios</h3>
+        <div id="stories-content"></div>
+    </div>
+
+    <!-- Redes sociales -->
+    <div id="social" class="card mb-4">
+        <h3>Redes sociales</h3>
+        <div id="social-content"></div>
+    </div>
+  </div>
+
+<script>
+    // Datos JSON simulados
+    const data = {
+        "menuItems": [
+            {
+                "name": "Discusión sobre servicios",
+                "description": "Foros y debates sobre los diferentes servicios bancarios y financieros disponibles.",
+                "comments": [
+                    {
+                        "author": "Laura Martínez",
+                        "comment": "El servicio al cliente del Banco X ha mejorado mucho últimamente. La atención en línea es rápida y eficiente. Aunque las comisiones siguen siendo altas, es un banco muy confiable.",
+                        "date": "12 de enero de 2025"
+                    },
+                    {
+                        "author": "Carlos Pérez",
+                        "comment": "He tenido una experiencia mixta con Banco Y. Sus tasas de interés son atractivas, pero tuve problemas con la aplicación móvil. Ojalá mejoren esa parte.",
+                        "date": "11 de enero de 2025"
+                    }
+                ]
+            },
+            {
+                "name": "Comparación de bancos",
+                "description": "Comparativa entre distintos bancos en términos de tasas de interés, comisiones, y servicios ofrecidos.",
+                "comparison": [
+                    {
+                        "bank": "Banco X",
+                        "interestRate": "5.5% anual",
+                        "fees": "$15 mensuales",
+                        "services": ["Cuentas de ahorro", "Préstamos personales", "Tarjetas de crédito", "Banca en línea"],
+                        "pros": ["Buena atención al cliente", "Aplicación intuitiva"],
+                        "cons": ["Comisiones de mantenimiento", "Tasaciones altas para préstamos personales"]
+                    },
+                    {
+                        "bank": "Banco Y",
+                        "interestRate": "6.2% anual",
+                        "fees": "$10 mensuales",
+                        "services": ["Cuentas de ahorro", "Préstamos hipotecarios", "Inversiones", "Banca móvil"],
+                        "pros": ["Bajas tasas en préstamos hipotecarios", "Sin comisiones por transferencias internas"],
+                        "cons": ["Aplicación con errores frecuentes", "Límites bajos para retiros gratuitos"]
+                    }
+                ]
+            },
+            {
+                "name": "Historias de usuarios",
+                "description": "Relatos y experiencias de usuarios que han interactuado con servicios financieros.",
+                "stories": [
+                    {
+                        "author": "Carlos Pérez",
+                        "story": "Después de años buscando un préstamo personal, logré encontrar una tasa de interés razonable con un banco local. El proceso fue mucho más fácil de lo que imaginaba y el servicio al cliente fue excelente.",
+                        "date": "12 de enero de 2025"
+                    },
+                    {
+                        "author": "Ana Gómez",
+                        "story": "Siempre me había dado miedo invertir, pero después de asistir a una charla sobre inversiones, decidí probar con una pequeña cantidad en fondos de inversión. Me sorprendió ver cómo mi dinero empezó a crecer y ahora estoy más segura de cómo invertir.",
+                        "date": "11 de enero de 2025"
+                    }
+                ]
+            },
+            {
+                "name": "Redes sociales",
+                "description": "Síguenos en nuestras redes sociales para obtener más contenido y noticias.",
+                "socialLinks": [
+                    { "platform": "Facebook", "url": "https://www.facebook.com/tuempresa", "icon": "img/facebook-icon.png" },
+                    { "platform": "Twitter", "url": "https://twitter.com/tuempresa", "icon": "img/twitter-icon.png" },
+                    { "platform": "Instagram", "url": "https://www.instagram.com/tuempresa", "icon": "img/instagram-icon.png" },
+                    { "platform": "LinkedIn", "url": "https://www.linkedin.com/company/tuempresa", "icon": "img/linkedin-icon.png" }
+                ]
+            }
+        ]
+    };
+
+    // Función para agregar los comentarios de discusión
+    function loadDiscussion() {
+        const discussionContainer = document.getElementById('discussion-content');
+        data.menuItems[0].comments.forEach(comment => {
+            const commentBubble = document.createElement('div');
+            commentBubble.classList.add('comment-bubble');
+            commentBubble.innerHTML = `<p><strong>${comment.author}:</strong> ${comment.comment}</p><p class="comment-meta">${comment.date}</p>`;
+            discussionContainer.appendChild(commentBubble);
+        });
+    }
+
+    // Función para agregar la comparación de bancos
+    function loadComparison() {
+        const comparisonContainer = document.getElementById('comparison-content');
+        let table = `<table class="comparison-table"><thead><tr><th>Banco</th><th>Tasa de interés</th><th>Comisiones</th><th>Servicios</th><th>Pros</th><th>Contras</th></tr></thead><tbody>`;
+        data.menuItems[1].comparison.forEach(bank => {
+            table += `<tr>
+                <td>${bank.bank}</td>
+                <td>${bank.interestRate}</td>
+                <td>${bank.fees}</td>
+                <td>${bank.services.join(", ")}</td>
+                <td>${bank.pros.join(", ")}</td>
+                <td>${bank.cons.join(", ")}</td>
+            </tr>`;
+        });
+        table += `</tbody></table>`;
+        comparisonContainer.innerHTML = table;
+    }
+
+    // Función para agregar las historias de usuarios
+    function loadStories() {
+        const storiesContainer = document.getElementById('stories-content');
+        data.menuItems[2].stories.forEach(story => {
+            const storyBubble = document.createElement('div');
+            storyBubble.classList.add('comment-bubble');
+            storyBubble.innerHTML = `<p><strong>${story.author}:</strong> ${story.story}</p><p class="comment-meta">${story.date}</p>`;
+            storiesContainer.appendChild(storyBubble);
+        });
+    }
+
+    // Función para agregar enlaces de redes sociales
+    function loadSocialLinks() {
+        const socialContainer = document.getElementById('social-content');
+        const socialIcons = data.menuItems[3].socialLinks.map(link => {
+            return `
+                <a href="${link.url}" target="_blank" class="social-icon">
+                    <img src="${link.icon}" alt="${link.platform}" class="social-img">
+                    <span class="social-text">${link.platform}</span>
+                </a>
+            `;
+        }).join('');
+        socialContainer.innerHTML = socialIcons;
+    }
+
+    // Cargar el contenido dinámicamente
+    loadDiscussion();
+    loadComparison();
+    loadStories();
+    loadSocialLinks();
+</script>
+
+    <!-- Scripts adicionales -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,20 +1,190 @@
+
 {
-    "menuItems": [
-      {
-        "name": "Consejos de ahorro",
-        "description": "Consejos prácticos para ahorrar dinero.",
-        "link": "https://www.ejemplo.com/ahorro"
-      },
-      {
-        "name": "Guías para inversiones",
-        "description": "Guías completas sobre cómo invertir.",
-        "link": "https://www.ejemplo.com/inversiones"
-      },
-      {
-        "name": "Calculadoras financieras",
-        "description": "Herramientas para calcular tus finanzas.",
-        "link": "https://www.ejemplo.com/calculadoras"
+  "selectedMenuItems": [
+    {
+      "name": "Consejos de ahorro",
+      "description": "Consejos prácticos para ahorrar dinero, optimizar tus gastos y mejorar tu planificación financiera.",
+      "link": "https://bettermoneyhabits.bankofamerica.com/es/saving-budgeting/ways-to-save-money",
+      "additionalInfo": {
+        "tips": [
+          "Establece un presupuesto mensual.",
+          "Elimina gastos innecesarios como suscripciones que no usas.",
+          "Aprovecha descuentos y cupones en tus compras."
+        ],
+        "image": "img/r1.jpg",
+        "updatedOn": "2025-01-11"
       }
-    ]
-  }
-  
+    },
+    {
+      "name": "Guías para inversiones",
+      "description": "Guías completas sobre cómo invertir en diferentes activos financieros, incluyendo acciones, bonos y criptomonedas.",
+      "link": "https://www.bbva.com/es/salud-financiera/guia-de-inversion-como-empezar-en-el-mundo-de-las-inversiones/",
+      "additionalInfo": {
+        "topics": [
+          "Inversiones a corto plazo vs largo plazo",
+          "Cómo elegir un buen corredor de bolsa",
+          "Diversificación de la cartera"
+        ],
+        "image": "img/r2.jpg",
+        "updatedOn": "2025-01-10"
+      }
+    },
+    {
+      "name": "Calculadoras financieras",
+      "description": "Herramientas interactivas para calcular tus finanzas personales, como préstamos, ahorros, y proyecciones de inversión.",
+      "link": "https://www.debt.com/es/herramientas/calculadoras-financieras/",
+      "additionalInfo": {
+        "tools": [
+          "Calculadora de préstamo personal",
+          "Calculadora de ahorro a largo plazo",
+          "Calculadora de rentabilidad de inversiones"
+        ],
+        "image": "img/r3.jpg",
+        "updatedOn": "2025-01-09"
+      }
+    }
+  ],
+  "remainingMenuItems": [
+    {
+      "name": "Discusión sobre servicios",
+      "description": "Foros y debates sobre los diferentes servicios bancarios y financieros disponibles. Los usuarios pueden compartir sus experiencias y dudas sobre los productos y servicios ofrecidos por bancos y otras instituciones financieras.",
+      "userComments": [
+        {
+          "username": "Laura Martínez",
+          "comment": "El servicio al cliente del Banco X ha mejorado mucho últimamente. La atención en línea es rápida y eficiente. Aunque las comisiones siguen siendo altas, es un banco muy confiable.",
+          "date": "2025-01-12"
+        },
+        {
+          "username": "Carlos Pérez",
+          "comment": "He tenido una experiencia mixta con Banco Y. Sus tasas de interés son atractivas, pero tuve problemas con la aplicación móvil. Ojalá mejoren esa parte.",
+          "date": "2025-01-11"
+        },
+        {
+          "username": "Ana Gómez",
+          "comment": "Banco Z tiene buenas opciones de crédito, pero me sorprendió que no ofrecen más opciones de ahorro. Es un buen banco, pero le falta variedad.",
+          "date": "2025-01-10"
+        }
+      ],
+      "additionalInfo": {
+        "updatedOn": "2025-01-12"
+      }
+    },
+    {
+      "name": "Comparación de bancos",
+      "description": "Comparativa entre distintos bancos en términos de tasas de interés, comisiones, y servicios ofrecidos. Se analizan las ventajas y desventajas de cada entidad.",
+      "comparison": [
+        {
+          "bank": "Banco X",
+          "interestRate": "5.5% anual",
+          "fees": "Comisión de mantenimiento de $15 mensuales",
+          "services": [
+            "Cuentas de ahorro",
+            "Préstamos personales",
+            "Tarjetas de crédito",
+            "Banca en línea"
+          ],
+          "pros": [
+            "Buena atención al cliente",
+            "Aplicación móvil intuitiva",
+            "Red de cajeros amplia"
+          ],
+          "cons": [
+            "Comisiones de mantenimiento",
+            "Tasaciones altas para préstamos personales"
+          ]
+        },
+        {
+          "bank": "Banco Y",
+          "interestRate": "6.2% anual",
+          "fees": "Comisión de mantenimiento de $10 mensuales",
+          "services": [
+            "Cuentas de ahorro",
+            "Préstamos hipotecarios",
+            "Inversiones a plazo fijo",
+            "Banca móvil"
+          ],
+          "pros": [
+            "Bajas tasas de interés en préstamos hipotecarios",
+            "Sin comisiones por transferencias entre cuentas del mismo banco"
+          ],
+          "cons": [
+            "Aplicación móvil con errores frecuentes",
+            "Límites bajos para retiros gratuitos"
+          ]
+        }
+      ],
+      "additionalInfo": {
+        "updatedOn": "2025-01-12"
+      }
+    },
+    {
+      "name": "Historias de usuarios",
+      "description": "Relatos y experiencias de usuarios que han interactuado con servicios financieros. Aquí se comparten experiencias personales sobre cómo diferentes personas han manejado sus finanzas o tomado decisiones clave en su vida financiera.",
+      "userStories": [
+        {
+          "name": "Carlos Pérez",
+          "story": "Después de años buscando un préstamo personal, logré encontrar una tasa de interés razonable con un banco local. El proceso fue mucho más fácil de lo que imaginaba y el servicio al cliente fue excelente.",
+          "location": "Ciudad de México",
+          "updatedOn": "2025-01-12"
+        },
+        {
+          "name": "Ana Gómez",
+          "story": "Siempre me había dado miedo invertir, pero después de asistir a una charla sobre inversiones, decidí probar con una pequeña cantidad en fondos de inversión. Me sorprendió ver cómo mi dinero empezó a crecer y ahora estoy más segura de cómo invertir.",
+          "location": "Barcelona, España",
+          "updatedOn": "2025-01-11"
+        },
+        {
+          "name": "Luis Martínez",
+          "story": "Abrí una cuenta de ahorros en un banco digital y no podría estar más contento. Las tasas de interés son más altas que las de los bancos tradicionales y la aplicación es muy fácil de usar. Además, el servicio al cliente en línea es siempre rápido y eficiente.",
+          "location": "Buenos Aires, Argentina",
+          "updatedOn": "2025-01-10"
+        },
+        {
+          "name": "María Sánchez",
+          "story": "Al principio, no entendía bien cómo funcionaban las tarjetas de crédito. Pero después de informarme y aprender sobre las tasas de interés y los beneficios, logré optimizar mis gastos y ahora pago siempre a tiempo para evitar cargos adicionales.",
+          "location": "Lima, Perú",
+          "updatedOn": "2025-01-09"
+        },
+        {
+          "name": "Javier Ruiz",
+          "story": "Hace un año decidí hacer una inversión en criptomonedas. Fue una experiencia emocionante, aunque al principio me sentí inseguro. Hoy, después de una investigación cuidadosa, he logrado hacer que mi inversión crezca significativamente.",
+          "location": "Santiago, Chile",
+          "updatedOn": "2025-01-08"
+        }
+      ],
+      "additionalInfo": {
+        "updatedOn": "2025-01-12"
+      }
+    },
+    {
+      "name": "Redes sociales",
+      "description": "Síguenos en nuestras redes sociales para obtener más contenido y noticias. Únete a nuestra comunidad y mantente informado sobre educación financiera, ofertas, consejos y más.",
+      "socialLinks": [
+        {
+          "platform": "Facebook",
+          "link": "https://www.facebook.com/tuempresa",
+          "icon": "img/facebook-icon.png"
+        },
+        {
+          "platform": "Twitter",
+          "link": "https://twitter.com/tuempresa",
+          "icon": "img/twitter-icon.png"
+        },
+        {
+          "platform": "Instagram",
+          "link": "https://www.instagram.com/tuempresa",
+          "icon": "img/instagram-icon.png"
+        },
+        {
+          "platform": "LinkedIn",
+          "link": "https://www.linkedin.com/company/tuempresa",
+          "icon": "img/linkedin-icon.png"
+        }
+      ],
+      "additionalInfo": {
+        "updatedOn": "2025-01-12"
+      }
+    }
+  ]
+}
+
