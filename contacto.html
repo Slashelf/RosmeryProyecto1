@@ -179,7 +179,6 @@
             ]
         };
 
-        // Función para agregar los comentarios de discusión
         function loadDiscussion() {
             const discussionContainer = document.getElementById('discussion-content');
             data.menuItems[0].comments.forEach(comment => {
@@ -190,7 +189,6 @@
             });
         }
 
-        // Función para agregar la comparación de bancos
         function loadComparison() {
             const comparisonContainer = document.getElementById('comparison-content');
             let table = `<table class="comparison-table"><thead><tr><th>Banco</th><th>Tasa de interés</th><th>Comisiones</th><th>Servicios</th><th>Pros</th><th>Contras</th></tr></thead><tbody>`;
@@ -208,7 +206,6 @@
             comparisonContainer.innerHTML = table;
         }
 
-        // Función para agregar las historias de usuarios
         function loadStories() {
             const storiesContainer = document.getElementById('stories-content');
             data.menuItems[2].stories.forEach(story => {
@@ -219,7 +216,6 @@
             });
         }
 
-        // Función para agregar enlaces de redes sociales
         function loadSocialLinks() {
             const socialContainer = document.getElementById('social-content');
             const socialIcons = data.menuItems[3].socialLinks.map(link => {
@@ -228,14 +224,12 @@
             socialContainer.innerHTML = socialIcons;
         }
 
-        // Cargar el contenido dinámicamente
         loadDiscussion();
         loadComparison();
         loadStories();
         loadSocialLinks();
     </script>
 
-    <!-- Scripts adicionales -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

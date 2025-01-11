@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
         evaluacion: []
     };
 
-    // Cargar los datos desde JSON o `localStorage`
     const cargarDatos = async () => {
         const localData = localStorage.getItem('data');
         if (localData) {
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarTabla();
     };
 
-    // Llenar los selectores de categorías y evaluaciones
     const llenarSelectores = () => {
         inputCategoria.innerHTML = '';
         inputEvaluacion.innerHTML = '';
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Actualizar la tabla de registros
     const actualizarTabla = () => {
         tablaRegistros.innerHTML = '';
         data.opiniones.forEach((registro, index) => {
@@ -97,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formulario.reset();
     });
 
-    // Editar un registro
+    
     const editarRegistro = (index) => {
         const registro = data.opiniones[index];
         inputNombre.value = registro.nombre;
@@ -110,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarTabla();
     };
 
-    // Eliminar un registro
     const eliminarRegistro = (index) => {
         if (confirm('¿Estás seguro de eliminar este registro?')) {
             data.opiniones.splice(index, 1);
@@ -119,11 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Guardar los datos en `localStorage`
     const guardarDatos = () => {
         localStorage.setItem('data', JSON.stringify(data));
     };
 
-    // Inicializar datos
     cargarDatos();
 });

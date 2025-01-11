@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // XML del menú
+   
     const menuXML = `
       <menu>
         <item name="Inicio" link="index.html">
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const xmlDoc = parser.parseFromString(menuXML, "text/xml");
     const menuList = document.getElementById("menu");
   
-    // Función para crear los elementos de menú desde el XML
+   
     const createMenu = (menuData, parentElement) => {
       const items = menuData.querySelectorAll("item");
   

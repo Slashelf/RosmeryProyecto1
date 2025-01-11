@@ -11,11 +11,9 @@
 </head>
 
 <body class="bg-light">
-    <!-- Navbar -->
-<!-- Barra superior (Logo y Cambio de Idioma) -->
+
 
   
-  <!-- Barra de navegación -->
   <nav id="navbar">
     <div class="top-bar">
       <div class="logo-container">
@@ -28,11 +26,10 @@
   
     <button id="menu-toggle" class="menu-btn">☰ Menu</button>
     <ul id="menu" class="menu-list">
-      <!-- El menú se llenará dinámicamente con JavaScript -->
     </ul>
   </nav>
   
-  <!-- Barra de separación (debajo de la barra de navegación) -->
+ 
   <div class="bottom-bar"></div>
   
   <!-- Carrusel -->
@@ -50,7 +47,7 @@
   <div class="container" id="form">
     <h1 class="text-center mb-4">Formulario de Opiniones</h1>
     <form id="formulario" class="mb-4">
-      <!-- El resto del formulario se mantiene igual -->
+     
     </form>
   </div>
   
@@ -197,19 +194,16 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-        // Menú: Solo un submenú abierto a la vez
         const menuItems = document.querySelectorAll(".menu-item");
 
         menuItems.forEach(item => {
             item.addEventListener("click", function() {
-            // Cerrar todos los submenús
             menuItems.forEach(innerItem => {
                 if (innerItem !== item) {
                 innerItem.classList.remove("open");
                 }
             });
 
-            // Toggle del submenú del ítem actual
             item.classList.toggle("open");
             });
         });
@@ -239,11 +233,10 @@
             showImage(currentIndex);
         });
 
-        // Cambiar imagen automáticamente cada 2 segundos
         setInterval(() => {
             currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
             showImage(currentIndex);
-        }, 8000); // 2000 milisegundos = 2 segundos
+        }, 8000); 
     });
 
     </script>

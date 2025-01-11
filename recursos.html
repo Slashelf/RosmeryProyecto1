@@ -113,16 +113,16 @@
     </main>
 
     <script>
-        // Función para cargar el archivo JSON y mostrar las cards
+  
         function cargarJSON() {
-            fetch('menuData.json')  // Cargar el archivo JSON
+            fetch('menuData.json')  
                 .then(response => response.json())
                 .then(data => {
-                    // Cards
+                    
                     const cardsContainer = document.getElementById('cards-container');
                     data.selectedMenuItems.forEach((item, index) => {
                         const card = document.createElement('div');
-                        card.classList.add('col-12', 'mb-4');  // Cada tarjeta ocupa toda la fila
+                        card.classList.add('col-12', 'mb-4');  
 
                         // Asignar clases para alternar el orden de las imágenes
                         const cardClass = (index % 2 === 0) ? 'card-image-left' : 'card-image-right';
@@ -143,9 +143,9 @@
                 .catch(error => console.error('Error cargando el archivo JSON:', error));
         }
 
-        // Llamar a la función para cargar los contenidos cuando la página esté cargada
+        
         document.addEventListener('DOMContentLoaded', () => {
-            cargarJSON(); // Cargar el JSON
+            cargarJSON(); 
         });
     </script>
 
